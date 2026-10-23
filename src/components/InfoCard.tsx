@@ -23,7 +23,7 @@ const InfoCard = ({ title, status, onPress }: InfoCardProps) => {
           {status}
         </Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+      <TouchableOpacity activeOpacity={0.6} style={styles.button} onPress={onPress}>
         <Text style={styles.buttonText}>Lihat Detail</Text>
       </TouchableOpacity>
     </View>
