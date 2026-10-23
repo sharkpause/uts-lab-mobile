@@ -55,22 +55,32 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
     borderRadius: 10,
     paddingHorizontal: 14,
     paddingVertical: 10,
     fontSize: 15,
-    marginBottom: 12,
     color: '#0F172A',
+
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.8,
+    shadowRadius: 6,
+
+    elevation: 4,
   },
   item: {
     backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
     borderRadius: 10,
-    padding: 14,
-    marginBottom: 10,
+    padding: 10,
+    margin: 10,
+    marginBottom: 0,
+
+    shadowColor: '#000000',
+    elevation: 4,
+
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
   },
   itemNama: {
     fontSize: 15,
