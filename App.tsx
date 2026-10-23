@@ -28,12 +28,12 @@ function MainScreen() {
           <InfoCard
             title="Tugas Mobile Programming"
             status="Selesai"
-            onPress={() => Alert.alert('Lihat Detail', 'Tugas Mobile Programming — selesai')}
+            onPress={() => Alert.alert('Lihat Detail', 'Tugas Mobile Programming: Selesai')}
           />
           <InfoCard
             title="Projek Ujian Tengah Semester"
             status="Proses"
-            onPress={() => Alert.alert('Lihat Detail', 'Projek Ujian Tengah Semester — sedang proses')}
+            onPress={() => Alert.alert('Lihat Detail', 'Projek Ujian Tengah Semester: Sedang proses')}
           />
         </View>
       ) : (
