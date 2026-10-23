@@ -42,7 +42,7 @@ const StudentDirectoryScreen = () => {
         data={hasilPencarian}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        ListEmptyComponent={<Text style={styles.emptyText}>Data tidak ditemukan!</Text>}
+        ListEmptyComponent={<Text style={styles.emptyText}>Data tidak ditemukan</Text>}
       />
     </View>
   );

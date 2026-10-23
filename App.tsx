@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Alert, StyleSheet, Text, Pressable, View } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import InfoCard from './src/components/InfoCard';
 import StudentDirectoryScreen from './src/screens/StudentDirectoryScreen';
 
 type TabKey = 'soal1' | 'soal2';
+
+const tabs: { key: TabKey; label: string }[] = [
+  { key: 'soal1', label: 'Soal 1' },
+  { key: 'soal2', label: 'Soal 2' },
+];
 
 function MainScreen() {
   const [activeTab, setActiveTab] = useState<TabKey>('soal1');
@@ -36,37 +41,33 @@ function MainScreen() {
       )}
 
       <View style={styles.tabBar}>
-        <Pressable android_ripple={{ color: 'rgba(255, 255, 255, 0.3)', borderless: false }}
-          key={'soal1'}
-          style={
-            [
-              styles.tabButton,
-              activeTab === 'soal1' && styles.tabButtonActive,
-              {
-                paddingBottom: 16 + insets.bottom
-              }
-            ]}
-          onPress={() => setActiveTab('soal1')}
-        >
-          <Text style={[styles.tabLabel, activeTab === 'soal1' && styles.tabLabelActive]}>
-            {'Soal 1'}
-          </Text>
-        </Pressable>
-        <Pressable android_ripple={{ color: 'rgba(255, 255, 255, 0.3)', borderless: false }}
-          key={'soal2'}
-          style={[
-            styles.tabButton,
-            activeTab === 'soal2' && styles.tabButtonActive,
-            {
-              paddingBottom: 16 + insets.bottom
-            }
-          ]}
-          onPress={() => setActiveTab('soal2')}
-        >
-          <Text style={[styles.tabLabel, activeTab === 'soal2' && styles.tabLabelActive]}>
-            {'Soal 2'}
-          </Text>
-        </Pressable>
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.key;
+
+          return (
+            <TouchableOpacity
+              key={tab.key}
+              activeOpacity={0.6}
+              style={[
+                styles.tabButton,
+                isActive && styles.tabButtonActive,
+                {
+                  paddingBottom: 16 + insets.bottom,
+                },
+              ]}
+              onPress={() => setActiveTab(tab.key)}
+            >
+              <Text
+                style={[
+                  styles.tabLabel,
+                  isActive && styles.tabLabelActive,
+                ]}
+              >
+                {tab.label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
 
     </View>

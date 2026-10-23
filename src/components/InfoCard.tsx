@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 
 export type InfoCardProps = {
   title: string;
@@ -23,9 +23,9 @@ const InfoCard = ({ title, status, onPress }: InfoCardProps) => {
           {status}
         </Text>
       </View>
-      <Pressable style={styles.button} onPress={onPress} android_ripple={{ color: 'rgba(255, 255, 255, 0.3)', borderless: false }}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
         <Text style={styles.buttonText}>Lihat Detail</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
